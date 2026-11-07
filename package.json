@@ -1,0 +1,9 @@
+{
+  "name": "soundport",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Private, browser-local NCM audio extraction for GitHub Pages",
+  "license": "MIT",
+  "scripts": {"test": "node --test tests/*.test.cjs", "start": "python3 -m http.server 8080 --bind 127.0.0.1"},
+  "engines": {"node": ">=22"}
+}

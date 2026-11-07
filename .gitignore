@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+dist/
+*.ncm
+*.mp3
+*.flac
+*.zip
+.hallmark/
