@@ -27,21 +27,6 @@ python3 -m http.server 8080 --bind 127.0.0.1
 需要通过 HTTP 或 HTTPS 打开；直接双击 `index.html` 的 `file://` 页面不能可靠运行 Worker。
 推荐使用支持 Worker、Blob 和 OKLCH CSS 的现代浏览器。
 
-## 发布至 GitHub Pages
-
-1. 创建 GitHub 仓库（例如 `soundport`），把**本项目目录内的文件**放到仓库根目录。
-2. 使用 `main` 分支，保留 `.github/workflows/`、`vendor/`、许可证等文件。
-3. 在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
-4. 推送代码；如果先前的部署因尚未启用 Pages 失败，在 **Actions → Test and deploy Pages → Run workflow** 重新运行。
-5. 测试通过后自动部署，网页地址显示在 Pages 设置页及工作流部署结果中。
-
-通常地址形如 `https://你的用户名.github.io/soundport/`。
-所有资源路径均为相对路径，兼容仓库子路径。工作流只发布明确列出的网页资源，不发布测试、音乐或整个仓库。
-
-也可在 Pages 中选择 **Deploy from a branch → main → /(root)**，直接发布静态文件；此方式不必使用部署工作流。
-
-官方文档：https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
-
 ## 格式与限制
 
 - MP3 来源输出 `.mp3`；FLAC 来源输出 `.flac`。**本版本不做 FLAC → MP3 有损转码。**
