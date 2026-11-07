@@ -1,14 +1,18 @@
 :root {
-  --color-paper: oklch(98.5% .004 250); --color-surface: oklch(100% 0 0);
-  --color-ink: oklch(24% .02 258); --color-muted: oklch(46% .018 257);
-  --color-accent: oklch(49% .20 256); --color-accent-ink: oklch(100% 0 0);
-  --color-tint: oklch(96% .015 250); --color-rule: oklch(86% .012 250);
-  --color-focus: oklch(32% .06 256); --color-error: oklch(43% .16 25);
+  color-scheme: dark;
+  --color-paper: oklch(14% .003 150); --color-surface: oklch(21% .004 150);
+  --color-ink: oklch(95% .002 150); --color-muted: oklch(70% .006 150);
+  --color-accent: oklch(72% .20 150); --color-accent-ink: oklch(16% .025 150);
+  --color-tint: oklch(26% .022 150); --color-rule: oklch(32% .006 150);
+  --color-focus: oklch(84% .15 150); --color-error: oklch(78% .13 25);
+  --color-panel-top: oklch(24% .004 150); --color-well: oklch(18% .004 150);
+  --color-status-bg: oklch(26% .045 150); --color-shadow: oklch(5% .003 150 / .3);
+  --color-accent-hover: oklch(82% .18 150);
   --font-display: 'Avenir Next', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-body: 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-mono: 'SFMono-Regular', Menlo, monospace;
   --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px; --space-2xl: 48px; --space-3xl: 64px;
-  --text-sm: .8125rem; --text-base: .9375rem; --text-lg: 1.125rem; --text-display: 1.5rem;
-  --radius-sm: 4px; --radius-lg: 8px; --rule-width: 1px;
+  --text-sm: .8125rem; --text-base: .9375rem; --text-lg: 1.125rem; --text-display: clamp(1.75rem, 4vw, 2.5rem);
+  --radius-sm: 8px; --radius-lg: 20px; --rule-width: 1px;
   --ease-out: cubic-bezier(.16,1,.3,1); --ease-in: cubic-bezier(.7,0,.84,0); --ease-in-out: cubic-bezier(.65,0,.35,1); --dur-fast: 120ms;
 }

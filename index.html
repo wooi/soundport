@@ -13,31 +13,32 @@
 <body>
   <header class="topbar"><a class="wordmark" href="./">SoundPort<span class="brand-name">声渡</span></a><nav aria-label="项目链接"><a href="#about">使用说明</a><a href="https://github.com/wooi/soundport">GitHub</a></nav></header>
   <main>
-    <div class="intro"><h1>NCM 转换</h1><p>提取文件中的原始音频，保存为 MP3 或 FLAC。</p></div>
+    <div class="intro"><h1>音频格式转换</h1><p>将 NCM 还原为 MP3 或 FLAC，保留原始音质。</p></div>
     <div class="tool-layout">
     <section class="workspace" aria-label="音乐转换工作台">
+      <div class="panel-heading"><h2>文件转换</h2><span class="local-status"><span aria-hidden="true"></span>本地处理</span></div>
+      <div class="format-route" aria-label="NCM 输入，自动识别并输出 MP3 或 FLAC"><span class="source-format">NCM</span><span class="route-arrow" aria-hidden="true">→</span><span>MP3 / FLAC <small>自动识别</small></span></div>
       <div class="upload" id="dropzone">
-        <div class="upload-copy"><h2>添加 NCM 文件</h2>
-        <p>拖放到此处，或点击选择。支持批量转换。</p></div>
-        <label class="picker primary">选择文件<input id="files" type="file" accept=".ncm" multiple aria-label="选择 NCM 文件"></label>
-        <p class="upload-limit">单个文件 ≤ 128 MiB · 每批 ≤ 256 MiB / 100 首</p>
+        <div class="upload-copy"><svg class="file-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 4H8a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V12L18 4Z"/><path d="M18 4v8h8M13 22v-6l7-1v6"/><path d="M13 22c0 2-4 2-4 0s4-2 4 0ZM20 21c0 2-4 2-4 0s4-2 4 0Z"/></svg><h2>将 NCM 文件拖到这里</h2>
+        <p>支持多选，添加后自动转换</p></div>
+        <label class="picker primary"><span aria-hidden="true">＋</span> 选择文件<input id="files" type="file" accept=".ncm" multiple aria-label="选择 NCM 文件"></label>
+        <p class="upload-limit">单个 ≤ 128 MiB <span aria-hidden="true">·</span> 每批 ≤ 256 MiB / 100 首</p>
       </div>
       <div class="toolbar"><div><h2>文件列表 <span id="count">0</span></h2><p id="summary" role="status" aria-live="polite">选择文件后自动开始转换</p></div><div class="actions"><button id="zip" disabled>打包下载 ZIP</button><button id="clear" disabled class="quiet">清空</button></div></div>
       <p id="notice" role="alert" hidden></p>
       <ol id="list" class="file-list" aria-label="文件转换状态"></ol>
-      <div id="empty" class="empty"><p>尚未添加文件</p><small>转换结果会显示在这里，可单独下载或打包为 ZIP。</small></div>
+      <div id="empty" class="empty"><p>尚未添加文件</p><small>转换完成后，可逐首下载或打包为 ZIP。</small></div>
       <noscript><p>请启用 JavaScript 才能在本地转换音乐。</p></noscript>
     </section>
     <aside id="about" class="about" aria-labelledby="about-title">
       <h2 id="about-title">使用说明</h2>
-      <dl class="format-info"><div><dt>输入</dt><dd>.ncm</dd></div><div><dt>输出</dt><dd>.mp3 / .flac</dd></div></dl>
-      <p class="format-note">输出格式由文件中的音频决定。目前不提供 FLAC 转 MP3。</p>
+      <details><summary>输出是 MP3 还是 FLAC？</summary><p>自动根据文件中的音频识别：MP3 来源输出 MP3，FLAC 来源输出 FLAC。目前不提供 FLAC 转 MP3。</p></details>
       <details><summary>音质与歌曲信息</summary><p>只解封装，不重新编码，保留原始音频字节。不额外写入封面或歌曲标签。</p></details>
       <details><summary>文件隐私</summary><p>转换和打包均在你的浏览器中完成，文件不会上传。原文件不变；关闭页面会清除未下载的结果。</p></details>
       <details><summary>文件无法转换？</summary><p>请确认文件为 NCM 格式且未损坏。其他封装格式暂不支持；文件较多时，建议分批转换。</p></details>
     </aside>
     </div>
   </main>
-  <footer><span>本地转换 · 文件不上传</span><a href="./LICENSE">MIT 开源许可</a></footer>
+  <footer><span>SoundPort · 文件不上传</span><a href="./LICENSE">MIT 开源许可</a></footer>
 </body>
 </html>
