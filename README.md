@@ -9,9 +9,15 @@
 - 后台 Worker 转换，不阻塞主界面；可取消当前文件、移除等待项或清空列表。
 - 按实际音频头识别 MP3 / FLAC，不仅依赖元数据，不重新编码。
 - 单首下载，或 ZIP 打包下载；ZIP 内同名文件自动编号。
-- 文件只在本机浏览器内处理，没有上传接口、外部 CDN、字体请求或统计脚本。
+- 文件只在本机浏览器内处理，没有音乐上传接口；转换依赖和字体无需外部 CDN。
 - 所需 CryptoJS 固定版本已放在 `vendor/`，无需 npm install。
 - MIT 开源许可，第三方许可随源码附带。
+
+## 访问统计与隐私
+
+正式网站使用 [Cloudflare Web Analytics](https://developers.cloudflare.com/web-analytics/) 查看访问量、页面浏览量与页面性能。统计不使用分析 Cookie；本项目不发送音乐内容、文件名、歌曲元数据或转换事件。
+
+`analytics.js` 仅在 `https://wooi.github.io/soundport/` 下加载 Cloudflare 统计脚本。本地运行和其他域名的副本默认不启用统计。统计脚本被拦截或加载失败不影响转换。站点 token 是公开的统计标识，不是账户 API 密钥；Fork 项目时请使用自己的统计配置或移除该脚本。
 
 ## 本地运行
 
@@ -60,6 +66,7 @@ npm test
 | 文件 | 用途 |
 | --- | --- |
 | `index.html` / `style.css` / `tokens.css` | 页面与样式 |
+| `analytics.js` | 正式网站访问统计，独立于转换逻辑 |
 | `app.js` | 队列、状态、取消、下载 |
 | `core.js` / `worker.js` | NCM 解析、AES 解封装、音频恢复 |
 | `zip.js` / `zip-worker.js` | UTF-8 ZIP32 STORE 打包 |

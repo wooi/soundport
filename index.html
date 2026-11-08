@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="在浏览器本地将 NCM 解封装为 MP3 或 FLAC。批量转换、ZIP 下载，无上传。">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; worker-src 'self'; connect-src 'none'; img-src 'self' data:; media-src blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; style-src 'self'; worker-src 'self'; connect-src https://cloudflareinsights.com/cdn-cgi/rum; img-src 'self' data:; media-src blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>声渡 SoundPort · 本地音频格式转换</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
@@ -34,11 +34,12 @@
       <h2 id="about-title">使用说明</h2>
       <details><summary>输出是 MP3 还是 FLAC？</summary><p>自动根据文件中的音频识别：MP3 来源输出 MP3，FLAC 来源输出 FLAC。目前不提供 FLAC 转 MP3。</p></details>
       <details><summary>音质与歌曲信息</summary><p>只解封装，不重新编码，保留原始音频字节。不额外写入封面或歌曲标签。</p></details>
-      <details><summary>文件隐私</summary><p>转换和打包均在你的浏览器中完成，文件不会上传。原文件不变；关闭页面会清除未下载的结果。</p></details>
+      <details><summary>文件隐私</summary><p>转换和打包均在你的浏览器中完成，文件不会上传。原文件不变；关闭页面会清除未下载的结果。</p><p>正式网站使用 Cloudflare Web Analytics 统计访问量与页面性能，不设置分析 Cookie，不采集音乐内容、文件名或歌曲信息。统计脚本加载失败不影响转换。</p></details>
       <details><summary>文件无法转换？</summary><p>请确认文件为 NCM 格式且未损坏。其他封装格式暂不支持；文件较多时，建议分批转换。</p></details>
     </aside>
     </div>
   </main>
   <footer><span>SoundPort · 文件不上传</span><a href="./LICENSE">MIT 开源许可</a></footer>
+  <script src="./analytics.js" defer></script>
 </body>
 </html>

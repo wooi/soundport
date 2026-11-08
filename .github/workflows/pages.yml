@@ -20,7 +20,7 @@ jobs:
       - name: Prepare static website
         run: |
           mkdir -p dist/vendor
-          cp index.html style.css tokens.css favicon.svg app.js core.js worker.js zip.js zip-worker.js LICENSE THIRD_PARTY_NOTICES.md dist/
+          cp index.html style.css tokens.css favicon.svg analytics.js app.js core.js worker.js zip.js zip-worker.js LICENSE THIRD_PARTY_NOTICES.md dist/
           cp vendor/crypto-js.js vendor/crypto-js.LICENSE dist/vendor/
           touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v3
